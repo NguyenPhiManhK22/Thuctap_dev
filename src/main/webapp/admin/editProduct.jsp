@@ -1,0 +1,75 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="model.SanPham" %>
+<%@ page import="dao.SanPhamDAO" %>
+<%@ page import="java.util.List" %>
+
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <title>Cập Nhật Sản Phẩm</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Css/adminStyle.css" />
+    <link rel="icon" type="/image/jpg" href="${pageContext.request.contextPath}/images/Logo.jpg" />
+</head>
+<body>
+    <div class="container">
+        <h1>Cập Nhật Sản Phẩm</h1>
+
+        <%
+            // Lấy ID sản phẩm từ URL
+            int maSanPham = Integer.parseInt(request.getParameter("id"));
+            
+            // Lấy sản phẩm theo ID từ DAO
+            SanPhamDAO sanPhamDAO = new SanPhamDAO();
+            SanPham product = sanPhamDAO.getSanPhamById(maSanPham);
+
+            if (product != null) {
+        %>
+        <form action="updateProduct" method="POST">
+            <input type="hidden" name="maSanPham" value="<%= product.getMaSanPham() %>" />
+
+            <label for="tenSanPham">Tên sản phẩm:</label>
+            <input type="text" id="tenSanPham" name="tenSanPham" value="<%= product.getTenSanPham() %>" required /><br />
+
+            <label for="gia">Giá:</label>
+            <input type="number" id="gia" name="gia" value="<%= product.getGia() %>" required /><br />
+
+            <label for="moTa">Mô tả:</label>
+			<textarea id="moTa" name="moTa" required style="width: 400px; height: 120px; resize: none; border: 1px solid #ccc; padding: 8px; border-radius: 4px;"><%= product.getMoTa() %></textarea><br />
+
+
+            <label for="soLuong">Số lượng trong kho:</label>
+            <input type="number" id="soLuong" name="soLuong" value="<%= product.getSoLuongTrongKho() %>" required /><br />
+
+            <label for="duongDanAnh">Đường dẫn ảnh:</label>
+            <input type="text" id="duongDanAnh" name="duongDanAnh" value="<%= product.getDuongDanAnh() %>" required /><br />
+
+            <label for="maDanhMuc">Danh mục:</label>
+            <select name="maDanhMuc" id="maDanhMuc">
+                <option value="1" <%= product.getMaDanhMuc() == 1 ? "selected" : "" %>>Cây Cảnh Phong Thủy</option>
+                <option value="2" <%= product.getMaDanhMuc() == 2 ? "selected" : "" %>>Cây Cảnh Trong Nhà</option>
+                <option value="3" <%= product.getMaDanhMuc() == 3 ? "selected" : "" %>>Cây Để Bàn</option>
+                <option value="4" <%= product.getMaDanhMuc() == 4 ? "selected" : "" %>>Cây Văn Phòng</option>
+                <option value="5" <%= product.getMaDanhMuc() == 5 ? "selected" : "" %>>Cây Thủy Sinh</option>
+                <option value="6" <%= product.getMaDanhMuc() == 6 ? "selected" : "" %>>Xương Rồng Cảnh</option>
+                <option value="7" <%= product.getMaDanhMuc() == 7 ? "selected" : "" %>>Cây Loại To</option>
+                <option value="8" <%= product.getMaDanhMuc() == 8 ? "selected" : "" %>>Cây Cảnh Sen Đá</option>
+                <option value="9" <%= product.getMaDanhMuc() == 9 ? "selected" : "" %>>Cây Công Trình</option>
+                <option value="10" <%= product.getMaDanhMuc() == 10 ? "selected" : "" %>>Phụ Kiện</option>
+               
+            </select><br />
+            <button type="submit">Cập nhật sản phẩm</button>
+
+        <%
+            } else {
+        %>
+            <p>Sản phẩm không tồn tại.</p>
+        <%
+            }
+        %>
+
+        <div class="back-btn">
+            <a href="products" class="btn btn-secondary">Quay lại trang quản lý sản phẩm</a>
+        </div>
+    </div>
+</body>
+</html>

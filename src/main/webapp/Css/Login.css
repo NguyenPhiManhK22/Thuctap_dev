@@ -1,12 +1,11 @@
 @charset "UTF-8";
 
-/* Căn giữa toàn trang */
 .auth-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f2f3f5; /* nền sáng nhẹ */
+  background-color: #f2f3f5; 
   padding: 20px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #222;
@@ -69,7 +68,7 @@
 .auth-form input:focus,
 .auth-form textarea:focus {
   outline: none;
-  border-color: #0078d7; /* xanh đậm nghiêm túc */
+  border-color: #0078d7; 
   box-shadow: 0 0 6px rgba(0, 120, 215, 0.4);
 }
 
@@ -111,7 +110,6 @@
   text-decoration: underline;
 }
 
-/* Thông báo lỗi */
 .error-msg {
   color: #d32f2f;
   background-color: #f9d6d5;

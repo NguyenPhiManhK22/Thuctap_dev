@@ -12,15 +12,16 @@
     <link rel="icon" type="/image/jpg" href="${pageContext.request.contextPath}/images/Logo.jpg" />
 </head>
 <body>
-
 <header class="header-top">
     <div class="container header-flex">
     		<div class="logo">
         		<a href="#"><img src="${pageContext.request.contextPath}/images/Logo.jpg" alt="Cây cảnh" /></a>
 			</div>
         <div class="search-box">
-    		<input type="text" placeholder="Bạn đang tìm cây gì...">
-  			<span class="search-icon">🔍</span>
+    		<form action="${pageContext.request.contextPath}/view/timkiem.jsp" method="get">
+        		<input type="text" name="keyword" placeholder="Bạn đang tìm kiếm Cây gì..." required />
+        		<button type="submit"><i class="search-icon">🔍</i></button>
+    		</form>
 		</div>
         <div class="header-right">
             <%
@@ -36,12 +37,10 @@
             <%
                 }
             %>   
-            <a href="#" class="cart">🛒 Giỏ hàng</a>
+            <a href="${pageContext.request.contextPath}/view/giohang.jsp" class="cart">🛒 Giỏ hàng</a>
         </div>
     </div>
 </header>
-
-<!-- MENU -->
 <nav class="menu-bar">
     <div class="container menu-flex"> 
         <label for="toggle-category" class="btn-category">
@@ -49,52 +48,52 @@
         </label>
 
         <ul class="main-menu">
-            <li><a href="index.jsp">Trang chủ</a></li>
-            <li><a href="gioithieu.jsp">Giới thiệu</a></li>
-            <li><a href="tintuc.jsp">Tin tức</a></li>
+            <li><a href="${pageContext.request.contextPath}/view/index.jsp">Trang chủ</a></li>
+            <li><a href="${pageContext.request.contextPath}/view/gioithieu.jsp">Giới thiệu</a></li>
+            <li><a href="${pageContext.request.contextPath}/view/tintuc.jsp">Tin tức</a></li>
 
-            <!-- CÁCH CHĂM SÓC -->
             <li class="has-sub">
                 <input type="checkbox" id="care">
                 <label for="care">Cách chăm sóc ▾</label>
                 <ul class="sub-menu">
-                     <li><a href="chamcayvanphong.jsp">Cây văn phòng</a></li>
-                    <li><a href="chamcaythuysinh.jsp">Cây thủy sinh</a></li>
+                    <li><a href="${pageContext.request.contextPath}/view/chamcayvanphong.jsp">Cây văn phòng</a></li>
+                    <li><a href="${pageContext.request.contextPath}/view/chamcaythuysinh.jsp">Cây thủy sinh</a></li>
                 </ul>
             </li>
 
-            <li><a href="#">Liên hệ</a></li>
+            <li><a href="${pageContext.request.contextPath}/view/lienhe.jsp">Liên hệ</a></li>
 
-            <!-- CHÍNH SÁCH -->
             <li class="has-sub">
                 <input type="checkbox" id="policy">
                 <label for="policy">Chính sách ▾</label>
                 <ul class="sub-menu">
-                    <li><a href="#">Đổi trả</a></li>
-                    <li><a href="#">Bảo hành</a></li>
+                    <li><a href="${pageContext.request.contextPath}/view/doitra.jsp">Đổi trả</a></li>
+                    <li><a href="${pageContext.request.contextPath}/view/baohanh.jsp">Bảo hành</a></li>
                 </ul>
-            </li>      
+            </li>
+			<li><a href="${pageContext.request.contextPath}/donhang">Đơn Hàng</a></li>
+         
         </ul>
     </div>
 </nav>
+</section>
 <input type="checkbox" id="toggle-category">
 <section class="main-content container">
 
-    <aside class="category-panel">
+     <aside class="category-panel">
         <ul>
-            <li><a href="#">Cây Cảnh Phong Thủy</a></li>
-            <li><a href="#">Cây Cảnh Trong Nhà</a></li>
-            <li><a href="#">Cây Để Bàn</a></li>
-            <li><a href="#">Cây Văn Phòng</a></li>
-            <li><a href="#">Cây Thủy Sinh</a></li>
-            <li><a href="#">Cây Xương Rồng Cảnh</a></li>
-            <li><a href="#">Cây Loại To</a></li>
-            <li><a href="#">Cây Cảnh Sen Đá</a></li>
-            <li><a href="#">Cây Công Trình</a></li>
+            <li><a href="${pageContext.request.contextPath}/danhmuc?id=1">Cây Cảnh Phong Thủy</a></li>
+            <li><a href="${pageContext.request.contextPath}/danhmuc?id=2">Cây Cảnh Trong Nhà</a></li>
+            <li><a href="${pageContext.request.contextPath}/danhmuc?id=3">Cây Để Bàn</a></li>
+            <li><a href="${pageContext.request.contextPath}/danhmuc?id=4">Cây Văn Phòng</a></li>
+            <li><a href="${pageContext.request.contextPath}/danhmuc?id=5">Cây Thủy Sinh</a></li>
+            <li><a href="${pageContext.request.contextPath}/danhmuc?id=6">Cây Xương Rồng Cảnh</a></li>
+            <li><a href="${pageContext.request.contextPath}/danhmuc?id=7">Cây Loại To</a></li>
+            <li><a href="${pageContext.request.contextPath}/danhmuc?id=8">Cây Cảnh Sen Đá</a></li>
+            <li><a href="${pageContext.request.contextPath}/danhmuc?id=9">Cây Công Trình</a></li>
         </ul>
     </aside>
 </section>
-
 <section class="contact-section">
 
     <h2 class="contact-title">Liên hệ với chúng tôi</h2>
@@ -105,7 +104,6 @@
 
     <div class="contact-wrapper">
 
-        <!-- THÔNG TIN LIÊN HỆ -->
         <div class="contact-info">
             <h3>CÔNG TY TNHH WEBCAYCANH</h3>
 
@@ -115,7 +113,6 @@
             <p><strong>🕒 Giờ làm việc:</strong> 8:00 – 18:00 (Thứ 2 – CN)</p>
         </div>
 
-        <!-- FORM LIÊN HỆ -->
         <div class="contact-form">
             <h3>Gửi liên hệ</h3>
 
@@ -131,7 +128,6 @@
 
     </div>
 
-    <!-- GOOGLE MAP -->
     <div class="contact-map">
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1862.1371634262805!2d105.79209818343881!3d21.02170676862991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab506260a04f%3A0xa97effe60af09306!2zV2ViIEPDonkgQ-G6o25o!5e0!3m2!1svi!2s!4v1671702197326!5m2!1svi!2s"
@@ -171,10 +167,8 @@
             <h3>Danh mục</h3>
             <ul class="footer-links">
                 <li><a href="index.jsp">Trang chủ</a></li>
-                <li><a href="#">Chính sách bảo hành</a></li>
-                <li><a href="#">Chính sách đổi trả hàng</a></li>
-                <li><a href="#">Chính sách bảo mật thông tin</a></li>
-                <li><a href="#">Sitemaps</a></li>
+                <li><a href="baohanh.jsp">Chính sách bảo hành</a></li>
+                <li><a href="doitra.jsp">Chính sách đổi trả hàng</a></li>              
             </ul>
         </div>
 

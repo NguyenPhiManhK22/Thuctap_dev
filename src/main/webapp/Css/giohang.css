@@ -1,0 +1,155 @@
+@charset "UTF-8";
+/* CSS cho Giỏ Hàng */
+.cart-container {
+    width: 80%; 
+    margin: 20px auto;
+    background-color: #f9f9f9; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); 
+    border: 1px solid #ddd;
+}
+
+.cart-header {
+    text-align: center; 
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.cart-table th, .cart-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.cart-table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    color: #333;
+}
+
+.cart-table td {
+    background-color: #fafafa;
+    color: #333;
+}
+
+
+.remove-item {
+    font-size: 18px;
+    color: red; 
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.remove-item:hover {
+    text-decoration: underline;
+}
+
+
+button {
+    padding: 10px 10px;
+    background-color: #ffffff;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #80ff80;
+}
+
+button i {
+    margin-right: 8px; 
+}
+
+/* Style cho phần tổng giỏ hàng */
+.cart-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.contai {
+    margin: 20px 0;
+}
+
+.contai h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #5a3e2b;
+    text-align: center;
+}
+
+
+.products-keywork {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.product-keywork {
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.product-keywork:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    transform: translateY(-4px);
+}
+
+.product-keywork img {
+    width: 100%;
+    height: 260px;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.product-keywork:hover img {
+    transform: scale(1.08);
+}
+
+.product-keywork h3 {
+    font-size: 16px;
+    color: #333;
+    margin: 12px 0 6px;
+    min-height: 40px;
+}
+
+.product-keywork p {
+    color: #e53935;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.product-keywork .btn {
+    display: inline-block;
+    padding: 8px 18px;
+    background: #5aa200;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.product-keywork .btn:hover {
+    background: #4a8d00;
+}

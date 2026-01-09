@@ -20,8 +20,10 @@
         		<a href="#"><img src="${pageContext.request.contextPath}/images/Logo.jpg" alt="Cây cảnh" /></a>
 			</div>
         <div class="search-box">
-    		<input type="text" placeholder="Bạn đang tìm cây gì...">
-  			<span class="search-icon">🔍</span>
+        	<form action="${pageContext.request.contextPath}/view/timkiem.jsp" method="get">
+        		<input type="text" name="keyword" placeholder="Bạn đang tìm kiếm Cây gì..." required />
+        		<button type="submit"><i class="search-icon">🔍</i></button>
+    		</form>
 		</div>
         <div class="header-right">
             <%
@@ -37,12 +39,10 @@
             <%
                 }
             %>   
-            <a href="#" class="cart">🛒 Giỏ hàng</a>
+            <a href="${pageContext.request.contextPath}/view/giohang.jsp" class="cart">🛒 Giỏ hàng</a>
         </div>
     </div>
 </header>
-
-<!-- MENU -->
 <nav class="menu-bar">
     <div class="container menu-flex"> 
         <label for="toggle-category" class="btn-category">
@@ -50,17 +50,16 @@
         </label>
 
         <ul class="main-menu">
-            <li><a href="index.jsp">Trang chủ</a></li>
-            <li><a href="gioithieu.jsp">Giới thiệu</a></li>
-            <li><a href="tintuc.jsp">Tin tức</a></li>
+            <li><a href="${pageContext.request.contextPath}/view/index.jsp">Trang chủ</a></li>
+            <li><a href="${pageContext.request.contextPath}/view/gioithieu.jsp">Giới thiệu</a></li>
+            <li><a href="${pageContext.request.contextPath}/view/tintuc.jsp">Tin tức</a></li>
 
-            <!-- CÁCH CHĂM SÓC -->
             <li class="has-sub">
                 <input type="checkbox" id="care">
                 <label for="care">Cách chăm sóc ▾</label>
                 <ul class="sub-menu">
-                    <li><a href="chamcayvanphong.jsp">Cây văn phòng</a></li>
-                    <li><a href="chamcaythuysinh.jsp">Cây thủy sinh</a></li>
+                    <li><a href="${pageContext.request.contextPath}/view/chamcayvanphong.jsp">Cây văn phòng</a></li>
+                    <li><a href="${pageContext.request.contextPath}/view/chamcaythuysinh.jsp">Cây thủy sinh</a></li>
                 </ul>
             </li>
 
@@ -70,11 +69,11 @@
                 <input type="checkbox" id="policy">
                 <label for="policy">Chính sách ▾</label>
                 <ul class="sub-menu">
-                    <li><a href="doitra.jsp">Đổi trả</a></li>
-                    <li><a href="baohanh.jsp">Bảo hành</a></li>
+                    <li><a href="${pageContext.request.contextPath}/view/doitra.jsp">Đổi trả</a></li>
+                    <li><a href="${pageContext.request.contextPath}/view/baohanh.jsp">Bảo hành</a></li>
                 </ul>
             </li>
-
+			<li><a href="${pageContext.request.contextPath}/donhang">Đơn Hàng</a></li>
          
         </ul>
     </div>
@@ -83,17 +82,17 @@
 <input type="checkbox" id="toggle-category">
 <section class="main-content container">
 
-    <aside class="category-panel">
+     <aside class="category-panel">
         <ul>
-            <li><a href="#">Cây Cảnh Phong Thủy</a></li>
-            <li><a href="#">Cây Cảnh Trong Nhà</a></li>
-            <li><a href="#">Cây Để Bàn</a></li>
-            <li><a href="#">Cây Văn Phòng</a></li>
-            <li><a href="#">Cây Thủy Sinh</a></li>
-            <li><a href="#">Cây Xương Rồng Cảnh</a></li>
-            <li><a href="#">Cây Loại To</a></li>
-            <li><a href="#">Cây Cảnh Sen Đá</a></li>
-            <li><a href="#">Cây Công Trình</a></li>
+            <li><a href="${pageContext.request.contextPath}/danhmuc?id=1">Cây Cảnh Phong Thủy</a></li>
+            <li><a href="${pageContext.request.contextPath}/danhmuc?id=2">Cây Cảnh Trong Nhà</a></li>
+            <li><a href="${pageContext.request.contextPath}/danhmuc?id=3">Cây Để Bàn</a></li>
+            <li><a href="${pageContext.request.contextPath}/danhmuc?id=4">Cây Văn Phòng</a></li>
+            <li><a href="${pageContext.request.contextPath}/danhmuc?id=5">Cây Thủy Sinh</a></li>
+            <li><a href="${pageContext.request.contextPath}/danhmuc?id=6">Cây Xương Rồng Cảnh</a></li>
+            <li><a href="${pageContext.request.contextPath}/danhmuc?id=7">Cây Loại To</a></li>
+            <li><a href="${pageContext.request.contextPath}/danhmuc?id=8">Cây Cảnh Sen Đá</a></li>
+            <li><a href="${pageContext.request.contextPath}/danhmuc?id=9">Cây Công Trình</a></li>
         </ul>
     </aside>
 
@@ -118,7 +117,7 @@
 
         <div class="product-item">
         	<div class="img-box">
-        		<img src="${pageContext.request.contextPath}/images/cayhpgocto.jpg">
+        	<a href="${pageContext.request.contextPath}/productDetail?maSanPham=8">	<img src="${pageContext.request.contextPath}/images/cayhanhphucgocto.jpg"> </a>
     		</div>          
             <p class="name">Cây Hạnh Phúc Gốc To</p>
             <p class="price">2.200.000 đ</p>
@@ -126,7 +125,7 @@
 
         <div class="product-item">
         	<div class="img-box">
-        		<img src="${pageContext.request.contextPath}/images/Caytrucnhatvang.jpg">
+        	<a href="${pageContext.request.contextPath}/productDetail?maSanPham=5">	<img src="${pageContext.request.contextPath}/images/trucnhatvang.jpg"> </a>
     		</div>           
             <p class="name">Cây Trúc Nhật Vàng</p>
             <p class="price">125.000 đ</p>
@@ -134,7 +133,7 @@
 
         <div class="product-item">
         	<div class="img-box">
-       			 <img src="${pageContext.request.contextPath}/images/Sendacanhbuombac.jpg">
+       		<a href="${pageContext.request.contextPath}/productDetail?maSanPham=74"> <img src="${pageContext.request.contextPath}/images/Sendacanhbuombac.jpg"> </a>
     		</div>        
             <p class="name">Sen đá cánh bướm bạc</p>
             <p class="price">25.000 đ</p>
@@ -142,7 +141,7 @@
 
         <div class="product-item">
         	<div class="img-box">
-        		<img src="${pageContext.request.contextPath}/images/Sendacasio.jpg">
+        	<a href="${pageContext.request.contextPath}/productDetail?maSanPham=75">	<img src="${pageContext.request.contextPath}/images/Sendacasio.jpg"> </a>
     		</div>          
             <p class="name">Sen đá Casio</p>
             <p class="price">15.000 đ</p>
@@ -151,18 +150,18 @@
         
         <div class="product-item">
         	<div class="img-box">
-				<img src="${pageContext.request.contextPath}/images/Caykimtien.jpg">
+				<a href="${pageContext.request.contextPath}/productDetail?maSanPham=1">	<img src="${pageContext.request.contextPath}/images/HoaGiay.jpg"> </a>
 		    </div>    
-            <p class="name">Cây Kim Tiền</p>
-            <p class="price">350.000 đ</p>
+            <p class="name">Cây Hoa Giấy</p>
+            <p class="price">250.000 đ</p>
         </div>
 
         <div class="product-item">
         	<div class="img-box">
-				<img src="${pageContext.request.contextPath}/images/Cayluoiho.jpg">
+				<a href="${pageContext.request.contextPath}/productDetail?maSanPham=6">	<img src="${pageContext.request.contextPath}/images/cayalbo.jpg"> </a>
     		</div>
-            <p class="name">Cây Lưỡi Hổ</p>
-            <p class="price">180.000 đ</p>
+            <p class="name">Cây Monstera Albo</p>
+            <p class="price">550.000 đ</p>
         </div>
 	</div>	
   </div>
@@ -182,7 +181,7 @@
         		<img src="${pageContext.request.contextPath}/images/Caycanhdeban.jpg" alt="Cây cảnh">
         		<div class="img-title">CÂY CẢNH ĐỂ BÀN</div>
         	<div class="overlay">
-            	<a href="#" class="detail-btn">CHI TIẾT</a>
+            	<a href="${pageContext.request.contextPath}/danhmuc?id=3"" class="detail-btn">CHI TIẾT</a>
         	</div>
     	</div>
 	</div>
@@ -192,7 +191,7 @@
         		<img src="${pageContext.request.contextPath}/images/Caycanhphongthuy.jpg" alt="Cây cảnh">
         		<div class="img-title">CÂY CẢNH PHONG THỦY</div>
         	<div class="overlay">
-            	<a href="#" class="detail-btn">CHI TIẾT</a>
+             <a href="${pageContext.request.contextPath}/danhmuc?id=1" class="detail-btn">CHI TIẾT</a>
         	</div>
     	</div>
 	</div>
@@ -202,7 +201,7 @@
         		<img src="${pageContext.request.contextPath}/images/Caycanhtrongnha.jpg" alt="Cây cảnh">
         		<div class="img-title">CÂY CẢNH TRONG NHÀ</div>
         	<div class="overlay">
-            	<a href="#" class="detail-btn">CHI TIẾT</a>
+            	<a href="${pageContext.request.contextPath}/danhmuc?id=2" class="detail-btn">CHI TIẾT</a>
         	</div>
     	</div>
 	</div>
@@ -212,7 +211,7 @@
         		<img src="${pageContext.request.contextPath}/images/Caycanhsenda.jpg" alt="Cây cảnh">
         		<div class="img-title">CÂY CẢNH SEN ĐÁ</div>
         	<div class="overlay">
-            	<a href="#" class="detail-btn">CHI TIẾT</a>
+            	<a href="${pageContext.request.contextPath}/danhmuc?id=8" class="detail-btn">CHI TIẾT</a>
         	</div>
     	</div>
 	</div>
@@ -222,7 +221,7 @@
         		<img src="${pageContext.request.contextPath}/images/Caycanhvanphong.jpg" alt="Cây cảnh">
         		<div class="img-title">CÂY CẢNH VĂN PHÒNG</div>
         	<div class="overlay">
-            	<a href="#" class="detail-btn">CHI TIẾT</a>
+            	<a href="${pageContext.request.contextPath}/danhmuc?id=4" class="detail-btn">CHI TIẾT</a>
         	</div>
     	</div>
 	</div>
@@ -232,17 +231,17 @@
         		<img src="${pageContext.request.contextPath}/images/Caycanhthuysinh.jpg" alt="Cây cảnh">
         		<div class="img-title">CÂY CẢNH THỦY SINH</div>
         	<div class="overlay">
-            	<a href="#" class="detail-btn">CHI TIẾT</a>
+            	<a href="${pageContext.request.contextPath}/danhmuc?id=5" class="detail-btn">CHI TIẾT</a>
         	</div>
     	</div>
 	</div>
 	
 	<div class="category-item">
     	<div class="img-frame">
-        		<img src="${pageContext.request.contextPath}/images/Caycanhdeban.jpg" alt="Cây cảnh">
-        		<div class="img-title">CÂY CẢNH ĐỂ BÀN </div>
+        		<img src="${pageContext.request.contextPath}/images/Xuongrongcanh.jpg" alt="Cây cảnh">
+        		<div class="img-title">Xương rồng Cảnh </div>
         	<div class="overlay">
-            	<a href="#" class="detail-btn">CHI TIẾT</a>
+            	<a href="${pageContext.request.contextPath}/danhmuc?id=6" class="detail-btn">CHI TIẾT</a>
         	</div>
     	</div>
 	</div>
@@ -252,7 +251,7 @@
         		<img src="${pageContext.request.contextPath}/images/Phukien.jpg" alt="Cây cảnh">
         		<div class="img-title">PHỤ KIỆN</div>
         	<div class="overlay">
-            	<a href="#" class="detail-btn">CHI TIẾT</a>
+            	<a href="${pageContext.request.contextPath}/danhmuc?id=10" class="detail-btn">CHI TIẾT</a>
         	</div>
     	</div>
 	</div>
@@ -612,10 +611,8 @@ document.addEventListener("DOMContentLoaded", function () {
             <h3>Danh mục</h3>
             <ul class="footer-links">
                 <li><a href="index.jsp">Trang chủ</a></li>
-                <li><a href="#">Chính sách bảo hành</a></li>
-                <li><a href="#">Chính sách đổi trả hàng</a></li>
-                <li><a href="#">Chính sách bảo mật thông tin</a></li>
-                <li><a href="#">Sitemaps</a></li>
+                <li><a href="baohanh.jsp">Chính sách bảo hành</a></li>
+                <li><a href="doitra.jsp">Chính sách đổi trả hàng</a></li>     
             </ul>
         </div>
 

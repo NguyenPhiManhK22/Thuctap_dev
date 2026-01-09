@@ -24,7 +24,7 @@
             <button type="submit">Đăng nhập</button>
         </form>
         <p>Bạn chưa có tài khoản? <a href="${pageContext.request.contextPath}/register">Đăng ký</a>
-        <a href="index" class="btn-back-home">&larr; Quay lại Trang Chủ</a>
+        <a href="view/index.jsp" class="btn-back-home">&larr; Quay lại Trang Chủ</a>
     </div>
 </div>
 </body>

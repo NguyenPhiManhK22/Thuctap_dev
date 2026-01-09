@@ -7,14 +7,12 @@
     color: #333;
 }
 
-/* TIÊU ĐỀ */
 .project-titlle {
     font-size: 28px;
     color: #5aa200;
     margin-bottom: 20px;
 }
 
-/* ĐOẠN GIỚI THIỆU */
 .project-intro {
     margin-bottom: 30px;
 }
@@ -28,7 +26,6 @@
     text-decoration: underline;
 }
 
-/* ẢNH LỚN */
 .project-image {
     text-align: center;
     margin: 30px 0;
@@ -39,7 +36,6 @@
     border-radius: 6px;
 }
 
-/* MỖI MỤC */
 .project-section {
     margin-top: 40px;
 }
@@ -80,7 +76,7 @@
     line-height: 1.6;
 }
 
-/*Tin tức*/
+
 .news-section {
     width: 1200px;
     margin: 60px auto;
@@ -239,4 +235,3 @@
 .contact-map {
     margin-top: 40px;
 }
-
